@@ -201,17 +201,7 @@ export default function EditProfile2() {
         <CameraAvatar image={image} setImage={setImage} />
         <View style={s.plug} />
         <Formik
-          initialValues={{
-            name: data.name /*phone: data.phone,*/,
-            email: data.email,
-            job: data.job,
-            city: data.address.city,
-            street: data.address.street,
-            house: data.address.house,
-            apt: data.address.apt,
-            password: data.password,
-            confirmPassword: data.password /*referral: ''*/
-          }}
+
           onSubmit={onFormikSubmit}
         >
           {props => (
@@ -229,7 +219,7 @@ export default function EditProfile2() {
                     <Text style={g.text28_700_blue}>פרטים אישיים</Text>
                     <RegInput
                       onChangeText={props.handleChange('name')}
-                      value={props.values.name}
+                      // value={props.values.name}
                       placeholder='שם מלא'
                       borderColor={nameBorder}
                       setFocus={setFocus}
@@ -239,7 +229,7 @@ export default function EditProfile2() {
 
                     <RegInput
                       onChangeText={props.handleChange('email')}
-                      value={props.values.email}
+                      // value={props.values.email}
                       placeholder='אימייל'
                       borderColor={emailBorder}
                       autoCapitalize='none'
@@ -250,7 +240,7 @@ export default function EditProfile2() {
                     </RegInput>
                     <RegInput
                       onChangeText={props.handleChange('job')}
-                      value={props.values.job}
+                      // value={props.values.job}
                       placeholder='עיסוק'
                       borderColor={jobBorder}
                       setFocus={setFocus}
@@ -263,7 +253,7 @@ export default function EditProfile2() {
                     <Text style={g.text28_700_blue}>כתובת מגורים</Text>
                     <RegInput
                       onChangeText={props.handleChange('city')}
-                      value={props.values.city}
+                      // value={props.values.city}
                       placeholder='עיר'
                       borderColor={cityBorder}
                       setFocus={setFocus}
@@ -272,7 +262,7 @@ export default function EditProfile2() {
                     </RegInput>
                     <RegInput
                       onChangeText={props.handleChange('street')}
-                      value={props.values.street}
+                      // value={props.values.street}
                       placeholder='רחוב'
                       borderColor={streetBorder}
                       setFocus={setFocus}
@@ -282,7 +272,7 @@ export default function EditProfile2() {
                     <View style={s.house}>
                       <RegInputSmall
                         onChangeText={props.handleChange('apt')}
-                        value={props.values.apt}
+                        // value={props.values.apt}
                         placeholder="מס' דירה"
                         //  keyboardType='number-pad'
                         style={{ width: '47%' }}
@@ -293,7 +283,7 @@ export default function EditProfile2() {
                       </RegInputSmall>
                       <RegInputSmall
                         onChangeText={props.handleChange('house')}
-                        value={props.values.house}
+                        // value={props.values.house}
                         placeholder="מס' בית"
                         //  keyboardType='number-pad'
                         style={{ width: '50%' }}

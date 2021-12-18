@@ -4,7 +4,9 @@ import Navigator from './routes/homeStack'
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './redux/store';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
+import TipProvider from "react-native-tip";
+
 
 import {
   useFonts,
@@ -38,6 +40,18 @@ export default function App() {
   return (
     <Provider store={store}>
       <Navigator />
+      <TipProvider
+                    overlayOpacity={0.5}
+                    titleStyle={{
+                        fontWeight: 'bold',
+                        fontSize: 18,
+                        marginBottom: 10
+                    }}
+                    bodyStyle={{
+                        fontSize: 16
+                    }}
+                    darkMode={false}
+                />
     </Provider>
   );
 }

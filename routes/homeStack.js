@@ -22,7 +22,7 @@ const Stack = createStackNavigator()
 export default function Navigate () {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false, gestureEnabled: false/*, animationEnabled: false */}}>
+      <Stack.Navigator initialRouteName="Profile" screenOptions={{ headerShown: false, gestureEnabled: false/*, animationEnabled: false */}}>
      {/* <Stack.Screen
           name='Test'
           component={Test}
@@ -47,8 +47,7 @@ export default function Navigate () {
           name='Registration'
           component={Registration}
           option={{ title: 'reg' }}
-        />      
-        
+        />
         <Stack.Screen
           name='About'
           component={About}

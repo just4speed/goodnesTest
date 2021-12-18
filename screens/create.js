@@ -65,7 +65,8 @@ export default function Create() {
     LogBox.ignoreLogs(['VirtualizedLists should never be nested'])
   }, [])
 
-  const cats = useSelector(state => state.categories.categories)
+  // const cats = useSelector(state => state.categories.categories)
+  const cats = useSelector(state => state.categories.categories);
 
   const scale = 1.4
 
@@ -456,12 +457,12 @@ export default function Create() {
         result={result}
       />
 
-      <CalendarModal
+      {/* <CalendarModal
         modalOpen={calendarModalOpen}
         setModalOpen={setCalendarModalOpen}
         date={date}
         setDate={setDate}
-      />
+      /> */}
 
       <SearchLayout
         readyToConfirm={readyToConfirm}
@@ -573,10 +574,10 @@ export default function Create() {
             </View>
             {!createMode && (
               <View style={s.newCal}>
-                <CalendarButton
+                {/* <CalendarButton
                   date={date}
                   onPress={() => setCalendarModalOpen(true)}
-                />
+                /> */}
                 <View style={s.palka} />
                 <TouchableOpacity
                   style={s.newMap}
@@ -612,8 +613,7 @@ export default function Create() {
                 </TouchableOpacity>
               </View>
             )}
-
-            {createMode && (
+              {createMode && (
               <View style={s.showMapBlock}>
                 <AmountPanel amount={amount} setAmount={setAmount} />
                 <TouchableOpacity
@@ -626,7 +626,7 @@ export default function Create() {
                   <Text style={g.text18_400_blue}>{distanceText}</Text>
                 </TouchableOpacity>
               </View>
-            )}
+              )}
 
             {createMode && (
               <View style={s.periodsBlock}>

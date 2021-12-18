@@ -4,7 +4,8 @@ import {
   View,
   TextInput,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native'
 
 const DaysPanel = ({ days, setDays, textFont }) => {
@@ -22,108 +23,116 @@ const DaysPanel = ({ days, setDays, textFont }) => {
   return (
     <View style={s.outer}>
       <TouchableOpacity
-        style={[s.dayContainer, { backgroundColor: days[6] ? color1 : color2, borderTopLeftRadius: 50, borderBottomLeftRadius: 50 }]}
+        style={[s.dayContainer, { backgroundColor: "transparent", borderTopLeftRadius: 50, borderBottomLeftRadius: 50 }]}
         onPress={() => handleClick(6)}
       >
-        <Text
-          style={{
-            fontSize: textFont,
-            fontWeight: days[6] ? 'bold' : 'normal',
-            color: days[6] ? color3 : color4
-          }}
-        >
-          ש
-        </Text>
+        {days[6] ? (
+          <Image
+            source={require("../../Images/newIcons/days/7.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        ) : (
+          <Image
+            source={require("../../Images/newIcons/days/7а.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        )}
       </TouchableOpacity>
-      <View style={s.palka} />
       <TouchableOpacity
-        style={[s.dayContainer, { backgroundColor: days[5] ? color1 : color2 }]}
+        style={[s.dayContainer, { backgroundColor: "transparent" }]}
         onPress={() => handleClick(5)}
       >
-        <Text
-          style={{
-            fontSize: textFont,
-            fontWeight: days[5] ? 'bold' : 'normal',
-            color: days[5] ? color3 : color4
-          }}
-        >
-          ו
-        </Text>
+        {days[5] ? (
+          <Image
+            source={require("../../Images/newIcons/days/6.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        ) : (
+          <Image
+            source={require("../../Images/newIcons/days/6а.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        )}
       </TouchableOpacity>
-      <View style={s.palka} />
       <TouchableOpacity
-        style={[s.dayContainer, { backgroundColor: days[4] ? color1 : color2 }]}
+        style={[s.dayContainer, { backgroundColor: "transparent" }]}
         onPress={() => handleClick(4)}
       >
-        <Text
-          style={{
-            fontSize: textFont,
-            fontWeight: days[4] ? 'bold' : 'normal',
-            color: days[4] ? color3 : color4
-          }}
-        >
-          ה
-        </Text>
+        {days[4] ? (
+          <Image
+            source={require("../../Images/newIcons/days/5.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        ) : (
+          <Image
+            source={require("../../Images/newIcons/days/5а.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        )}
       </TouchableOpacity>
-      <View style={s.palka} />
       <TouchableOpacity
-        style={[s.dayContainer, { backgroundColor: days[3] ? color1 : color2 }]}
+        style={[s.dayContainer, { backgroundColor: "transparent" }]}
         onPress={() => handleClick(3)}
       >
-        <Text
-          style={{
-            fontSize: textFont,
-            fontWeight: days[3] ? 'bold' : 'normal',
-            color: days[3] ? color3 : color4
-          }}
-        >
-          ד
-        </Text>
+        {days[3] ? (
+          <Image
+            source={require("../../Images/newIcons/days/4.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        ) : (
+          <Image
+            source={require("../../Images/newIcons/days/4а.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        )}
       </TouchableOpacity>
-      <View style={s.palka} />
       <TouchableOpacity
-        style={[s.dayContainer, { backgroundColor: days[2] ? color1 : color2 }]}
+        style={[s.dayContainer, { backgroundColor: "transparent" }]}
         onPress={() => handleClick(2)}
       >
-        <Text
-          style={{
-            fontSize: textFont,
-            fontWeight: days[2] ? 'bold' : 'normal',
-            color: days[2] ? color3 : color4
-          }}
-        >
-          ג
-        </Text>
+        {days[2] ? (
+          <Image
+            source={require("../../Images/newIcons/days/3.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        ) : (
+          <Image
+            source={require("../../Images/newIcons/days/3а.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        )}
       </TouchableOpacity>
-      <View style={s.palka} />
       <TouchableOpacity
-        style={[s.dayContainer, { backgroundColor: days[1] ? color1 : color2 }]}
+        style={[s.dayContainer, { backgroundColor: "transparent" }]}
         onPress={() => handleClick(1)}
       >
-        <Text
-          style={{
-            fontSize: textFont,
-            fontWeight: days[1] ? 'bold' : 'normal',
-            color: days[1] ? color3 : color4
-          }}
-        >
-          ב
-        </Text>
+        {days[1] ? (
+          <Image
+            source={require("../../Images/newIcons/days/2.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        ) : (
+          <Image
+            source={require("../../Images/newIcons/days/2а.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        )}
       </TouchableOpacity>
-      <View style={s.palka} />
       <TouchableOpacity
-        style={[s.dayContainer, { backgroundColor: days[0] ? color1 : color2, borderTopRightRadius: 50, borderBottomRightRadius: 50 }]}
+        style={[s.dayContainer, { backgroundColor: "transparent", borderTopRightRadius: 50, borderBottomRightRadius: 50 }]}
         onPress={() => handleClick(0)}
       >
-        <Text
-          style={{
-            fontSize: textFont,
-            fontWeight: days[0] ? 'bold' : 'normal',
-            color: days[0] ? color3 : color4
-          }}
-        >
-          א
-        </Text>
+        {days[0] ? (
+          <Image
+            source={require("../../Images/newIcons/days/1.png")}
+            style={{ width: 40, height: 40 }}
+          />
+        ) : (
+          <Image
+            source={require("../../Images/newIcons/days/1а.png")}
+            style={{ width: 40, height: 40  }}
+          />
+        )}
       </TouchableOpacity>
     </View>
   )
@@ -148,7 +157,7 @@ const s = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 2,
+    borderWidth: 0,
     borderColor: '#243663'
   },
 

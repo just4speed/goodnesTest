@@ -77,7 +77,6 @@ export default function Home(props) {
           </View>
 
           <View style={s.descriptionBlock}>
-            <Text style={s.text}>.</Text>
             <Text style={s.text}>פלטפורמה לשיתוף "מעשים טובים" בין האנשים</Text>
           </View>
 
@@ -132,7 +131,8 @@ const s = StyleSheet.create({
   text: {
     color: 'white',
     fontSize: 18,
-    lineHeight: 20
+    lineHeight: 20,
+    textAlign: "center"
   },
 
   yellowButtonBlock: {

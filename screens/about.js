@@ -76,7 +76,6 @@ const s = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end'
   },
-
   termsBlock: {
     //   alignItems: 'center',
     //  justifyContent: 'flex-start',

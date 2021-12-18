@@ -104,15 +104,7 @@ export default function Login(props) {
         console.log('LOGIN NO GOOD')
         console.log(error)
         if (firstTry) {
-          Alert.alert("שגיאה", connected ? "טעות במספר טלפון או סיסמה, נא לתקן" : "מייל או סיסמא שגויים. אנא הרשמו", [
-            {
-              text: 'נסה שוב', onPress: () => {
-                setLoading(false)
-                setFirstTry(false)
-                navigation.navigate('Registration')
-              }
-            }
-          ])
+          Alert.alert("שגיאה", connected ? "טעות במספר טלפון או סיסמה, נא לתקן" : "מייל או סיסמא שגויים. אנא הרשמו");
         } else {
           Alert.alert("שגיאה", connected ? "טעות במספר טלפון או סיסמה, נא לתקן" : "איו חיבור לאינטרנט, נא לנסות מאוחר יותר", [
             {
@@ -166,16 +158,9 @@ export default function Login(props) {
           }*/)
       } catch (e) {
         console.log(e)
-        Alert.alert("Something wrong!", "מספר טלפון שגוי", [
-          {
-            text: 'נסה שוב', onPress: () => {
-              console.log('alert wrong')
-              navigation.navigate("Registration")
-              setModalPass(false)
-              setLoading(false)
-            }
-          }
-        ])
+        // !משהו השתבש
+        //  | מספר טלפון שגוי
+        Alert.alert("! מספר טלפון שגוי", "משהו השתבש");
         setLoading(false)
         // console.log(e)
       }
@@ -189,7 +174,7 @@ export default function Login(props) {
         }
       ])
       setPasswordBorderModal('red')
-    }0
+    }
   }
 
   const sendCode = async () => {

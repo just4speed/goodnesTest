@@ -241,7 +241,8 @@ export default function Registration2() {
                 <Modal
                     transparent={true}
                     animationType="slide"
-                    visible={modalOpen}>
+                    visible={modalOpen}
+                >
                     <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss() }}>
                         <View style={mS.modalBlock}>
                             <View style={mS.innerBlock}>
@@ -273,7 +274,7 @@ export default function Registration2() {
                     {
                         (props) => (
                             <KeyboardAvoidingView style={s.goodnessBlock} behavior={Platform.OS === "ios" ? "padding" : "height"} >
-                                <ScrollView style={s.formikBlock} contentContainerStyle={s.formikScrollStyle} keyboardShouldPersistTaps="always">
+                                <ScrollView vertical showsVerticalScrollIndicator={true} style={s.formikBlock} contentContainerStyle={s.formikScrollStyle} keyboardShouldPersistTaps="always">
                                     <View style={s.fieldsBlock}>
 
                                         <View style={s.personalBlock}>

@@ -77,11 +77,10 @@ const SomebodysInfo = ({ id }) => {
             Linking.openURL(`tel:${user.phone}`)
           }}
           style={[g.text18_600_blue, s.phoneNumber]}
-          
         >
-          {`+${user.phone}`}
+          {`+${user.phone} `}
+          <Text style={{ fontSize: 12, opacity: 0.5}}>נא ללחוץ על טלפון על מנת להתקשר</Text>
         </Text>
-
         <Phone style={{ transform: [{ scaleX: scale }, { scaleY: scale }] }} />
       </View>
       <View style={s.addressBlock}>

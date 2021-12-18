@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 
 const DistancePanel = ({ distance, setDistance }) => {
 
@@ -11,24 +11,56 @@ const DistancePanel = ({ distance, setDistance }) => {
 
     return (
         <View style={s.outer}>
-            <TouchableOpacity style={[s.first, s.distanceContainer, { backgroundColor: distance === 25001 ? color1 : color2 }]}
+            <TouchableOpacity style={[s.first, s.distanceContainer, { backgroundColor: "transparent" }]}
                 onPress={() => setDistance(25001)}>
-                <Text style={{ fontWeight: distance === 25001 ? "bold" : "normal", color: distance === 25001 ? color3 : color4, fontSize }}>1 ק"מ</Text>
+                { distance === 25001 ? (
+                    <Image
+                        source={require("../../Images/newIcons/06.png")}
+                        style={s.imgCard}
+                    /> ) : (
+                    <Image
+                    source={require("../../Images/newIcons/01.png")}
+                    style={s.imgCard}
+                /> ) } 
             </TouchableOpacity>
             {((distance !== 25001) && (distance !== 25007))? <View style={s.palka} /> : <View style={s.palkaEmpty} />}
-            <TouchableOpacity style={[s.distanceContainer, { backgroundColor: distance === 25007 ? color1 : color2 }]}
+            <TouchableOpacity style={[s.distanceContainer, { backgroundColor: "transparent" }]}
                 onPress={() => setDistance(25007)}>
-                <Text style={{ fontWeight: distance === 25007 ? "bold" : "normal", color: distance === 25007 ? color3 : color4, fontSize }}>7 ק"מ</Text>
+                { distance === 25007 ? (
+                    <Image
+                        source={require("../../Images/newIcons/07.png")}
+                        style={s.imgCard}
+                    /> ) : (
+                    <Image
+                    source={require("../../Images/newIcons/02.png")}
+                    style={s.imgCard}
+                /> ) } 
             </TouchableOpacity>
             {((distance !== 25007) && (distance !== 25025)) ? <View style={s.palka} /> : <View style={s.palkaEmpty} />}
-            <TouchableOpacity style={[s.distanceContainer, { backgroundColor: distance === 25025 ? color1 : color2 }]}
+            <TouchableOpacity style={[s.distanceContainer, { backgroundColor: "transparent" }]}
                 onPress={() => setDistance(25025)}>
-                <Text style={{ fontWeight: distance === 25025 ? "bold" : "normal", color: distance === 25025 ? color3 : color4, fontSize }}>אזור העיר</Text>
+                { distance === 25025 ? (
+                    <Image
+                        source={require("../../Images/newIcons/08.png")}
+                        style={s.imgCard}
+                    /> ) : (
+                    <Image
+                    source={require("../../Images/newIcons/03.png")}
+                    style={s.imgCard}
+                /> ) } 
             </TouchableOpacity>
             {((distance !== 25025) && (distance !== 25000)) ? <View style={s.palka} /> : <View style={s.palkaEmpty} />}
-            <TouchableOpacity style={[s.last, s.distanceContainer, { backgroundColor: distance === 25000 ? color1 : color2 }]}
+            <TouchableOpacity style={[s.last, s.distanceContainer, { backgroundColor: "transparent" }]}
                 onPress={() => setDistance(25000)}>
-                <Text style={{ fontWeight: distance === 25000 ? "bold" : "normal", color: distance === 25000 ? color3 : color4, fontSize }}>Online</Text>
+                { distance === 25000 ? (
+                    <Image
+                        source={require("../../Images/newIcons/010.png")}
+                        style={s.imgCard}
+                    /> ) : (
+                    <Image
+                    source={require("../../Images/newIcons/05.png")}
+                    style={s.imgCard}
+                /> ) } 
             </TouchableOpacity>
         </View>
     )
@@ -47,6 +79,12 @@ const s = StyleSheet.create({
         width: 2,
         height: '60%',
         // backgroundColor: '#BCE0FD'
+    },
+
+    imgCard: {
+        width: 60,
+        height: 60,
+        borderRadius: 10
     },
 
 
@@ -68,7 +106,7 @@ const s = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-around",
         overflow: 'hidden',
-        borderWidth: 1,
+        borderWidth: 0,
         borderColor: "#243663"
     },
 

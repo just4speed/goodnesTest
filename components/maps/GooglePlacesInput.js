@@ -4,7 +4,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 const GooglePlacesInput = ({ map, setCamera, setLatitude, setLongitude, setLatitudeMarker, setLongitudeMarker, setCoordinate }) => {
     return (
         <GooglePlacesAutocomplete
-            placeholder='מיקום החיפוש'
+            placeholder='נא לבחור מקום לקבלת השירות'
             fetchDetails={true}
             minLength={3}
             multiLine

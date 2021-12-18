@@ -12,8 +12,10 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   Keyboard,
+  Alert,
   KeyboardAvoidingView
-} from 'react-native'
+} from 'react-native';
+import g from '../styles/global';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import AvatarBig from '../components/avatars/AvatarBig'
 
@@ -103,6 +105,7 @@ export default function Profile() {
           contentContainerStyle={s.regBlockContainer}
           keyboardShouldPersistTaps="always"
         >
+          
           <PersonalInfo />
 
           <View style={s.folders}>
@@ -139,6 +142,9 @@ export default function Profile() {
             onPress={() => navigation.navigate('Create')}
           />
         </ScrollView>
+        <View style={{ marginVertical: 15 }}>
+            <Text style={{...g.text18_600_blue, fontSize: 16}}>צירוף של 5 משתמשים לאפליקציה יזכה בלב ראשון <Text style={{ color: "#ffb60d" }}>(0/5)</Text></Text>
+          </View>
       </SmallLayout>
     </TouchableWithoutFeedback>
   )

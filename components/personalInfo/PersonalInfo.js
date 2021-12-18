@@ -63,10 +63,7 @@ const PersonalInfo = () => {
       </View>
 
       <View style={s.phone}>
-        
         <Text selectable={true} style={[s.phoneNumber, g.text18_600_blue]}>{`+${info.phone}`}</Text>
-        
-        
         <Phone style={{ transform: [{ scaleX: scale }, { scaleY: scale }] }} />
       </View>
 
@@ -100,7 +97,7 @@ const s = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     width: '100%',
-    height: 216,
+    height: 236,
     //  backgroundColor: "pink",
     borderRadius: 20,
     backgroundColor: '#FFFFFF',

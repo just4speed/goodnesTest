@@ -5,49 +5,92 @@ import {
   Text,
   TouchableOpacity,
   Dimensions,
-  ImageBackground
-} from 'react-native'
-import g from '../../styles/global'
+  ImageBackground,
+  Alert
+} from 'react-native';
+import Modal from "@kalwani/react-native-modal";
+import g from '../../styles/global';
+
+import { Tip, showTip, closeTip } from "react-native-tip";
+
+const medalsData = [
+  {
+    type: "platinum",
+    title: "דרגת משתמש: פלטינה",
+    description: "סטאטוס מתקבל במתן 50 מעשים טובים."
+  },
+  {
+    type: "gold",
+    title: "דרגת משתמש: זהב",
+    description: "סטאטוס מתקבל במתן 20 מעשים טובים."
+  },
+  {
+    type: "silver",
+    title: "דרגת משתמש: כסף",
+    description: "סטאטוס מתקבל במתן 10 מעשים טובים."
+  },
+  {
+    type: "bronze",
+    title: "דרגת משתמש: ברונזה",
+    description: "דרגה התחלתית של המשתמש."
+  },
+]
 
 const StatusPanel = ({ status }) => {
+  const [modalInfo, setModalInfo] = React.useState("gold");
 
 //  console.log(status)
 
+  const statusDescription = type => {
+    setModalInfo(type);
+    showTip("mod");
+    // setModal(true);
+  }
+
   return (
+    <>
+    <Tip
+        title={medalsData.find(m => m.type === modalInfo).title}
+        body={medalsData.find(m => m.type === modalInfo).description}
+        id="mod"
+      >
     <View style={s.status2}>
-      <View style={s.roll1}>
+      <TouchableOpacity onPress={() => statusDescription("platinum")} style={s.roll1}>
         <ImageBackground
           source={require('../../Images/MedalPlatinum.png')}
           style={s.imageBack}
         />
         <Text style={g.text12_600_blue}>פלטינה</Text>
         {status !== 'platinum' && <View style={s.plug}/>}
-      </View>
-      <View style={s.roll2}>
+      </TouchableOpacity>
+      
+      <TouchableOpacity onPress={() => statusDescription("gold")} style={s.roll2}>
         <ImageBackground
           source={require('../../Images/MedalGold.png')}
           style={s.imageBack}
         />
         <Text style={g.text12_600_blue}>זהב</Text>
         {(status === 'bronze' || status === 'silver') && <View style={s.plug}/>}
-      </View>
-      <View style={s.roll3}>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => statusDescription("silver")}  style={s.roll3}>
         <ImageBackground
           source={require('../../Images/MedalSilver.png')}
           style={s.imageBack}
         />
         <Text style={g.text12_600_blue}>כסף</Text>
         {status === 'bronze' && <View style={s.plug}/>}
-      </View>
-      <View style={s.roll4}>
+      </TouchableOpacity>
+      <TouchableOpacity  onPress={() => statusDescription("bronze")} style={s.roll4}>
         <ImageBackground
           source={require('../../Images/MedalBronze.png')}
           style={s.imageBack}
         />
         <Text style={g.text12_600_blue}>ארד</Text>
        {/*status !== 'bronze' && <View style={s.plug}/>*/}
-      </View>
+      </TouchableOpacity>
     </View>
+    </Tip>
+    </>
   )
 }
 
@@ -76,7 +119,7 @@ const s = StyleSheet.create({
   },
   roll1: {
     height: '100%',
-    width: '29%',
+    width: 100,
     right: Dimensions.get('window').width * 0.88 * -0.18,
     backgroundColor: '#C7CDD3',
     borderTopLeftRadius: 1000,
@@ -95,7 +138,7 @@ const s = StyleSheet.create({
 
   roll2: {
     height: '100%',
-    width: '29%',
+    width: 100,
     right: Dimensions.get('window').width * 0.88 * -0.12,
     backgroundColor: '#F4C311',
     borderTopLeftRadius: 1000,
@@ -114,7 +157,7 @@ const s = StyleSheet.create({
 
   roll3: {
     height: '100%',
-    width: '29%',
+    width: 100,
     right: Dimensions.get('window').width * 0.88 * -0.06,
     backgroundColor: '#97C0DB',
     borderTopLeftRadius: 1000,
@@ -133,7 +176,7 @@ const s = StyleSheet.create({
 
   roll4: {
     height: '100%',
-    width: '27%',
+    width: 80,
     backgroundColor: '#D28B34',
     borderTopLeftRadius: 1000,
     borderBottomLeftRadius: 1000,
